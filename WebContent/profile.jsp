@@ -10,14 +10,14 @@ Statement stat = conn.createStatement();
 %>
 
 <%
-ResultSet rs = stat.executeQuery("select * from user where username='jvbarriga'");
+String un = (String)session.getAttribute("username");
+ResultSet rs = stat.executeQuery("select * from user where username='" + un + "'");
 
 username = rs.getString(1);
 firstName = rs.getString(3);
 lastName = rs.getString(4);
 designation = rs.getString(5);
 
-rs.close();
 %>
 
 
@@ -50,7 +50,6 @@ rs.close();
             </div>
           </div>
          </div>
-
 <br />
 <br />
 <br />

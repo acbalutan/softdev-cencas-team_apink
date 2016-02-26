@@ -3,17 +3,7 @@
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
-<%
-String profile_msg=(String)request.getAttribute("profile_msg");  
-if(profile_msg!=null){  
-out.print(profile_msg);  
-}  
-String login_msg=(String)request.getAttribute("login_msg");  
-if(login_msg!=null){  
-out.print(login_msg);  
-}  
-%>  
+<body>  
  <br/>  
 
 

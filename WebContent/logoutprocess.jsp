@@ -13,10 +13,11 @@
 <jsp:setProperty property="*" name="obj"/>  
   
 <%  
-session.setAttribute("session","FALSE");
+session.invalidate();
+//session.setAttribute("session","FALSE");
 
 %>
-<div class="alert alert-success" role="alert" style="position: absolute; top: 40%; left: 35%;">
+<div class="alert alert-success" style="position: absolute; top: 40%; left: 35%;">
         <strong> You have successfully logged out!</strong> You will be redirected to the index page
       </div>
 	

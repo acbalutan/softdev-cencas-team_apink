@@ -1,6 +1,10 @@
 <html>
 <head>
-	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link type="text/css" rel="stylesheet" href="bootstrap/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -8,15 +12,15 @@
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="bean.PileBean" %>
 
-<TABLE BORDER="1">
+<div class="col-md-6" style="position: absolute; top: 15%; left: 25%;">
+<TABLE class="table table-striped">
                 
 <%
+
 java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D:/Eclipse/db/textfiles/votes.txt")); 
 	String lineRead = new String (); 
-	Vector candidacy = new Vector(); 
-	Vector name = new Vector(); 
-	Vector votes = new Vector(); 
 	
 	try {
 		while ((lineRead = bf.readLine()) != null) 
@@ -29,9 +33,13 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{ 
 				if(lineRead.startsWith("Candidacy")) 
 				{ 
-					%>	
+					%>
 					<TR>
-          	  			<TH>Candidacy</TH>
+          	  			<TH style="text-align: left;">START OF CANDIDATE</TH>
+                   		<TD></TD>
+                   	</TR>
+					<TR>
+          	  			<TD>Candidacy:</TD>
                    		<TD> <%= lineRead.substring(11) %> </TD>
                    	</TR>
 					<%
@@ -40,7 +48,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{ 
 					%>	
 					<TR>
-          	  			<TH>Name</TH>
+          	  			<TD>Name:</TD>
                    		<TD> <%= lineRead.substring(6) %> </TD>
                    	</TR>
 					<%
@@ -49,7 +57,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{ 	
 					%>	
 					<TR>
-          	  			<TH>Votes</TH>
+          	  			<TD>Votes:</TD>
                    		<TD> <%= lineRead.substring(7) %> </TD>
                    	</TR>
 					<%
@@ -58,7 +66,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>Sender IP</TH>
+      	  			<TD>Sender IP:</TD>
                		<TD> <%= lineRead.substring(11) %> </TD>
                	</TR>
 				<%
@@ -67,7 +75,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>Sender MAC Address</TH>
+      	  			<TD>Sender MAC Address:</TD>
                		<TD> <%= lineRead.substring(20) %> </TD>
                	</TR>
 				<%
@@ -76,7 +84,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>Sender Latitude</TH>
+      	  			<TD>Sender Latitude:</TD>
                		<TD> <%= lineRead.substring(17) %> </TD>
                	</TR>
                	
@@ -86,30 +94,27 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>Sender Longitude</TH>
+      	  			<TD>Sender Longitude:</TD>
                		<TD> <%= lineRead.substring(17) %> </TD>
                	</TR>
                	
 				<%
 			}
-			else if (lineRead.startsWith("Date"))
+			else if (lineRead.startsWith("Timestamp"))
 			{
-				%>	
+				%>
 				<TR>
-      	  			<TH>Date</TH>
-               		<TD> <%= lineRead.substring(6) %> </TD>
+      	  			<TD>Timestamp:</TD>
+               		<TD> <%= lineRead.substring(11) %> </TD>
                	</TR>
-               	
-				<%
-			}
-			else if (lineRead.startsWith("Time"))
-			{
-				%>	
-				<TR>
-      	  			<TH>Time</TH>
-               		<TD> <%= lineRead.substring(6) %> </TD>
+               	<TR>
+               		<TD></TD>
+               		<TH style="text-align: right;">END OF CANDIDATE</TH>
                	</TR>
-               	
+               	<TR>
+               		<TD></TD>
+               		<TD></TD>
+               	</TR>
 				<%
 			}
 			else if (lineRead.startsWith("Precinct"))
@@ -117,7 +122,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			
 					%>	
 					<TR>
-	      	  			<TH>Precinct</TH>
+	      	  			<TD>Precinct:</TD>
 	               		<TD> <%= lineRead.substring(10) %> </TD>
 	               	</TR>
 	               	
@@ -129,7 +134,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 				
 					%>	
 					<TR>
-	      	  			<TH>City</TH>
+	      	  			<TD>City:</TD>
 	               		<TD> <%= lineRead.substring(6) %> </TD>
 	               	</TR>
 	               	
@@ -140,7 +145,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>District</TH>
+      	  			<TD>District:</TD>
                		<TD> <%= lineRead.substring(10) %> </TD>
                	</TR>
 				<%
@@ -149,7 +154,7 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>Province</TH>
+      	  			<TD>Province:</TD>
                		<TD> <%= lineRead.substring(10) %> </TD>
                	</TR>
 				<%
@@ -158,14 +163,14 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 			{
 				%>	
 				<TR>
-      	  			<TH>Region</TH>
+      	  			<TD>Region:</TD>
                		<TD> <%= lineRead.substring(8) %> </TD>
                	</TR>
 				<%
 			}
 			} 
 			
-			%>	
+			%>
 			<%
 			
 		} 
@@ -176,6 +181,24 @@ java.io.BufferedReader bf = new java.io.BufferedReader(new java.io.FileReader("D
 		e.printStackTrace(); 
 	}
 %>
-
 </TABLE>
-<a href="profile.jsp">Profile Page</a>
+</div>
+	<div style="position: absolute; top: 8.65em; left: 87em;">
+			<form action="AcceptToDb.jsp">
+				<button type="submit" class="btn btn-success">Accept</button>
+			</form>
+			<form action="SendEmail.jsp">
+				<button type="submit" class="btn btn-danger">Reject</button>
+			</form>
+	</div>
+	<div style="position: absolute; top: 8.70em; left: 19em;">
+			<form action="profile.jsp">
+				<button type="submit" class="btn btn-primary">Back to Profile</button>
+			</form>
+	</div>
+	<script src="bootstrap/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="bootstrap/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="bootstrap/docs.min.js"></script>
+</body>
+</html>

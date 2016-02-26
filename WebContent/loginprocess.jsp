@@ -1,3 +1,4 @@
+<%@page import="bean.LoginBean"%>
 <html>
 <head>
 	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
@@ -16,12 +17,16 @@
 boolean status=LoginDao.validate(obj);
 if(status){  
 	%>
-	  <div class="alert alert-success" role="alert" style="position: absolute; top: 40%; left: 33%;">
+	  <div class="alert alert-success" style="position: absolute; top: 40%; left: 33%;">
         <strong> You have successfully logged in!</strong> You will be redirected to page containing your guidelines
       </div>
 	
 	<%
+
+String username = request.getParameter("username");
 session.setAttribute("session","TRUE");
+session.setAttribute("username", username);
+LoginDao.closeCon();
 
 %> <META http-equiv="refresh" content="2.5;URL=profile.jsp"> <%
 }  
