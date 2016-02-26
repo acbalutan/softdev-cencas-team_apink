@@ -27,9 +27,9 @@
 			
 		byte[] mac = network.getHardwareAddress();
 			
-		/* for (int i = 0; i < mac.length; i++) {
+		for (int i = 0; i < mac.length; i++) {
 			sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));		
-		} */
+		}
 			
 	} catch (UnknownHostException e) {	
 		e.printStackTrace();	
@@ -168,7 +168,7 @@
 %>
 <html>
 <head>
-<META http-equiv="refresh" content="2;URL=pile.jsp">
+<META http-equiv="refresh" content="2;URL=index.jsp">
 <title>Accept</title>
 </head>
 <body>
