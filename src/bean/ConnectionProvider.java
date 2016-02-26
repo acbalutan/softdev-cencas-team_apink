@@ -1,5 +1,6 @@
 package bean;
 import java.sql.*;
+
 import static bean.Provider.*;
 
 public class ConnectionProvider {
@@ -12,5 +13,12 @@ public class ConnectionProvider {
 	}
 	public static Connection getCon(){
 		return con;
+	}
+	public static void closeCon(){
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

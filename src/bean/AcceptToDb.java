@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TapatInsert {
+public class AcceptToDb {
     public static void main(String[] args) throws Exception {
     	
     	InetAddress ip = null;
@@ -51,11 +51,11 @@ public class TapatInsert {
         Class.forName(DRIVER);
         Connection conn = DriverManager.getConnection(CONNECTION_URL);
         PreparedStatement prep = conn.prepareStatement(
-            "insert into tapat values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+            "insert into tapat values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
         
         prep.setString(1, "President");
         prep.setString(2, "Roy Seneres");
-        prep.setString(3, "9");
+        prep.setString(3, "6");
         prep.setString(4, "Precinct");
         prep.setString(5, "5");
         prep.setString(6, "23");
@@ -65,8 +65,9 @@ public class TapatInsert {
         prep.setString(10, ip.toString());
         prep.setString(11, sb.toString());
         prep.setString(12, "16.22331213000002");
-        prep.setString(13, "11.5151232199939");
+        prep.setString(13, "131.515123219999");
         prep.setString(14, myDateString);
+        prep.setString(15, myDateString);
         prep.addBatch();
 
         conn.setAutoCommit(false);
