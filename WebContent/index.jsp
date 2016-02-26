@@ -13,7 +13,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="bean.Provider" %>
 <%@ page import="bean.PileBean" %>
-<%@ page import="bean.Counter" %>
 
 <% 
 
