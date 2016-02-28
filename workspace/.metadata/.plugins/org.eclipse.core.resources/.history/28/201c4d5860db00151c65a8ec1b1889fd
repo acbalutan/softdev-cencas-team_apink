@@ -1,0 +1,14 @@
+package bean;
+
+public class CounterBean {
+
+	int counter;
+	
+	int getCounter(int counter){
+		return this.counter;
+	}
+	
+	void setCounter(int counter){
+		counter = this.counter;
+	}
+}

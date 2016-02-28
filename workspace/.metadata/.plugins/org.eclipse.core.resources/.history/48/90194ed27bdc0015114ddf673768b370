@@ -1,0 +1,11 @@
+package bean;
+
+
+public class Counter {
+
+	public int addCount(int a){
+		
+		a ++;
+		return a;
+	}
+}

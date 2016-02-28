@@ -1,0 +1,10 @@
+package bean;
+import java.sql.*;
+
+
+public class Counter {
+
+	public static void main (String [] args) throws SQLException{
+		
+	}
+}

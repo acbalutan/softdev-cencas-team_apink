@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:32 +0800] "GET /AES/login.jsp HTTP/1.1" 200 1087
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:32 +0800] "GET /AES/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 1017
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:36 +0800] "POST /AES/loginprocess.jsp HTTP/1.1" 200 481
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:36 +0800] "GET /AES/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 1017
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:36 +0800] "GET /AES/bootstrap/js/docs.min.js HTTP/1.1" 404 1007
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:37 +0800] "GET /AES/login.jsp HTTP/1.1" 200 1087
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:37 +0800] "GET /AES/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 1017
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:44 +0800] "POST /AES/loginprocess.jsp HTTP/1.1" 200 481
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:44 +0800] "GET /AES/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 1017
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:44 +0800] "GET /AES/bootstrap/js/docs.min.js HTTP/1.1" 404 1007
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:45 +0800] "GET /AES/login.jsp HTTP/1.1" 200 1087
+0:0:0:0:0:0:0:1 - - [04/Feb/2016:09:39:45 +0800] "GET /AES/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 1017

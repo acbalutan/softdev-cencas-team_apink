@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.websocket.Session"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.impl.protocol.giopmsgheaders.Message"/>
+<fullyQualifiedTypeName name="org.apache.catalina.Session"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.fastinfoset.sax.Properties"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="javax.mail.Session"/>
+<fullyQualifiedTypeName name="javax.mail.Message"/>
+<fullyQualifiedTypeName name="javax.mail.internet.MimeMessage"/>
+<fullyQualifiedTypeName name="javax.mail.internet.InternetAddress"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.sun.mail.smtp.SMTPTransport"/>
+</qualifiedTypeNameHistroy>
