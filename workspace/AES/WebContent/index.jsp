@@ -372,6 +372,350 @@ Statement stat = conn.createStatement();
 		</table>
 	</div>
 </div>
+
+<div style="width: 30em; position: absolute; top: 235%; left: 37%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>CITY LEVEL TOTALS</h1>
+	</div>
+</div>
+
+<div style="position: absolute; top: 250%; left: 8%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Duterte City Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>City</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet dutertecity = stat.executeQuery("SELECT * FROM city WHERE name='Rodrigo Duterte';");
+				while (dutertecity.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= dutertecity.getString("candidacy") %></td>
+				    		<td><%= dutertecity.getString("name") %></td>
+				    		<td><%= dutertecity.getString("vote") %></td>
+				    		<td><%= dutertecity.getString("city") %></td>
+				    		<td><%= dutertecity.getString("district") %></td>
+				    		<td><%= dutertecity.getString("province") %></td>
+				    		<td><%= dutertecity.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				dutertecity.close();
+				
+				ResultSet totaldutertecity = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM city WHERE name='Rodrigo Duterte';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totaldutertecity.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totaldutertecity.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
+<div style="position: absolute; top: 250%; left: 52%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Binay City Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>City</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet binaycity = stat.executeQuery("SELECT * FROM city WHERE name='Jejomar Binay';");
+				while (binaycity.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= binaycity.getString("candidacy") %></td>
+				    		<td><%= binaycity.getString("name") %></td>
+				    		<td><%= binaycity.getString("vote") %></td>
+				    		<td><%= binaycity.getString("city") %></td>
+				    		<td><%= binaycity.getString("district") %></td>
+				    		<td><%= binaycity.getString("province") %></td>
+				    		<td><%= binaycity.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				binaycity.close();
+				
+				ResultSet totalbinaycity = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM city WHERE name='Jejomar Binay';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totalbinaycity.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totalbinaycity.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
+<div style="position: absolute; top: 320%; left: 52%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Santiago City Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>City</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet santiagocity = stat.executeQuery("SELECT * FROM city WHERE name='Miriam Santiago';");
+				while (santiagocity.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= santiagocity.getString("candidacy") %></td>
+				    		<td><%= santiagocity.getString("name") %></td>
+				    		<td><%= santiagocity.getString("vote") %></td>
+				    		<td><%= santiagocity.getString("city") %></td>
+				    		<td><%= santiagocity.getString("district") %></td>
+				    		<td><%= santiagocity.getString("province") %></td>
+				    		<td><%= santiagocity.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				santiagocity.close();
+				
+				ResultSet totalsantiagocity = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM city WHERE name='Miriam Santiago';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totalsantiagocity.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totalsantiagocity.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
+<div style="position: absolute; top: 320%; left: 8%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Roxas City Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>City</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet roxascity = stat.executeQuery("SELECT * FROM city WHERE name='Mar Roxas';");
+				while (roxascity.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= roxascity.getString("candidacy") %></td>
+				    		<td><%= roxascity.getString("name") %></td>
+				    		<td><%= roxascity.getString("vote") %></td>
+				    		<td><%= roxascity.getString("city") %></td>
+				    		<td><%= roxascity.getString("district") %></td>
+				    		<td><%= roxascity.getString("province") %></td>
+				    		<td><%= roxascity.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				roxascity.close();
+				
+				ResultSet totalroxascity = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM city WHERE name='Mar Roxas';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totalroxascity.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totalroxascity.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
+
+<div style="position: absolute; top: 390%; left: 8%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Poe City Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>City</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet poecity = stat.executeQuery("SELECT * FROM city WHERE name='Grace Poe';");
+				while (poecity.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= poecity.getString("candidacy") %></td>
+				    		<td><%= poecity.getString("name") %></td>
+				    		<td><%= poecity.getString("vote") %></td>
+				    		<td><%= poecity.getString("city") %></td>
+				    		<td><%= poecity.getString("district") %></td>
+				    		<td><%= poecity.getString("province") %></td>
+				    		<td><%= poecity.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				poecity.close();
+				
+				ResultSet totalpoecity = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM city WHERE name='Grace Poe';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totalpoecity.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totalpoecity.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
+<div style="position: absolute; top: 390%; left: 52%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Seneres City Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>City</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet senerescity = stat.executeQuery("SELECT * FROM city WHERE name='Roy Seneres';");
+				while (poecity.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= senerescity.getString("candidacy") %></td>
+				    		<td><%= senerescity.getString("name") %></td>
+				    		<td><%= senerescity.getString("vote") %></td>
+				    		<td><%= senerescity.getString("city") %></td>
+				    		<td><%= senerescity.getString("district") %></td>
+				    		<td><%= senerescity.getString("province") %></td>
+				    		<td><%= senerescity.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				senerescity.close();
+				
+				ResultSet totalsenerescity = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM city WHERE name='Roy Seneres';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totalsenerescity.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totalsenerescity.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
 <%	stat.close();
 	conn.close();	%>
 	
