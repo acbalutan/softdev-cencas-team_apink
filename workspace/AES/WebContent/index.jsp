@@ -716,6 +716,120 @@ Statement stat = conn.createStatement();
 	</div>
 </div>
 
+<div style="width: 34em; position: absolute; top: 460%; left: 34%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>DISTRICT LEVEL TOTALS</h1>
+	</div>
+</div>
+
+<div style="position: absolute; top: 480%; left: 8%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Duterte District Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet dutertedistrict = stat.executeQuery("SELECT * FROM district WHERE name='Rodrigo Duterte';");
+				while (dutertedistrict.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= dutertedistrict.getString("candidacy") %></td>
+				    		<td><%= dutertedistrict.getString("name") %></td>
+				    		<td><%= dutertedistrict.getString("vote") %></td>
+				    		<td><%= dutertedistrict.getString("district") %></td>
+				    		<td><%= dutertedistrict.getString("province") %></td>
+				    		<td><%= dutertedistrict.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				dutertedistrict.close();
+				
+				ResultSet totaldutertedistrict = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM district WHERE name='Rodrigo Duterte';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totaldutertedistrict.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totaldutertedistrict.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
+
+
+<div style="position: absolute; top: 480%; left: 52%;">
+	<div class="page-header" style="padding-left: 5%;">
+		<h1>Binay District Level Totals</h1>
+	</div>
+	
+	<div class="col-md-6" style="padding-left: 5%;">
+		<table class="table table-striped">
+	    	<thead>
+	              <tr>
+	                <th>Candidacy</th>
+	                <th>Name</th>
+	                <th>Votes</th>
+	                <th>Level</th>
+	                <th>District</th>
+	                <th>Province</th>
+	                <th>Region</th>
+	              </tr>
+			</thead>
+			<tbody>     
+				<%
+				ResultSet binaydistrict = stat.executeQuery("SELECT * FROM district WHERE name='Jejomar Binay';");
+				while (binaydistrict.next()) {	    
+				    %>
+				    	<tr>
+				    		<td><%= binaydistrict.getString("candidacy") %></td>
+				    		<td><%= binaydistrict.getString("name") %></td>
+				    		<td><%= binaydistrict.getString("vote") %></td>
+				    		<td><%= binaydistrict.getString("district") %></td>
+				    		<td><%= binaydistrict.getString("province") %></td>
+				    		<td><%= binaydistrict.getString("region") %></td>
+				    	</tr>
+				    <%
+				}
+				binaydistrict.close();
+				
+				ResultSet totalbinaydistrict = stat.executeQuery("SELECT SUM(vote) as 'TOTALVOTES' FROM district WHERE name='Jejomar Binay';");
+				%>
+					<tr>
+						<td></td>
+						<td><strong>TOTAL VOTES</strong></td>
+						<td style="text-decoration: underline;"><strong> <%= totalbinaydistrict.getString("TOTALVOTES") %> </strong></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% totalbinaydistrict.close(); %>
+	    	</tbody>
+		</table>
+	</div>
+</div>
 <%	stat.close();
 	conn.close();	%>
 	
