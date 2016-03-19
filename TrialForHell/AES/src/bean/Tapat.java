@@ -13,10 +13,10 @@ public class Tapat {
         Statement stat = conn.createStatement();
         //stat.executeUpdate("drop table if exists tapat;");
         //stat.executeUpdate("create table tapat (candidacy,name,vote,level,precinct,barangay,city,district,province,region,ip,mac,latitude,longitude,timestamp);");
-        //stat.executeUpdate("delete from tapat where region='Region CAR';");
-        //stat.executeUpdate("update tapat set candidacy = REPLACE(candidacy, 'Semator', 'Senator');");
+        //stat.executeUpdate("delete from tapat where name='Jeffrey Ferrer' and candidacy='Governor';");
+        //stat.executeUpdate("update tapat set candidacy = REPLACE(candidacy, 'ViceGovernor', 'Governor');");
         
-        ResultSet rs = stat.executeQuery("select * from tapat where region='IX' order by precinct;");
+        ResultSet rs = stat.executeQuery("select * from tapat where city='Santa Marcela' and barangay = 'San Mariano';");
         while (rs.next()) {
             System.out.println("candidacy = " + rs.getString("candidacy"));
             System.out.println("name = " + rs.getString("name"));

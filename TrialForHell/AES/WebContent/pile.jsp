@@ -145,6 +145,20 @@ for(int i = 0; i < maxprecincts; i++){
 						<%
 				
 				}
+					
+				else if (lineRead.startsWith("Barangay"))
+				{
+				
+						%>	
+						<TR>
+		      	  			<TD>Barangay:</TD>
+		               		<TD> <%= lineRead.substring(10) %> </TD>
+		               	</TR>
+		               	
+						<%
+				
+				}
+					
 				else if (lineRead.startsWith("City"))
 				{
 					

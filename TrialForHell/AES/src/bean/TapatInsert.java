@@ -28,7 +28,9 @@ public class TapatInsert {
 //    		System.out.println("Current IP address : " + ip.getHostAddress());
     		
     		NetworkInterface network = NetworkInterface.getByInetAddress(ip);
-    			
+    		
+    		//byte[] mac = 
+    		
     		byte[] mac = network.getHardwareAddress();
     			
 //    		System.out.print("Current MAC address : ");
@@ -36,7 +38,7 @@ public class TapatInsert {
     		for (int i = 0; i < mac.length; i++) {
     			sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));		
     		}
-//    		System.out.println(sb.toString());
+//   		System.out.println(sb.toString());
     			
     	} catch (UnknownHostException e) {
     		
@@ -53,21 +55,20 @@ public class TapatInsert {
         PreparedStatement prep = conn.prepareStatement(
             "insert into tapat values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
         
-        
-        prep.setString(1, "President");
-        prep.setString(2, "Jejomar Binay");
-        prep.setString(3, "4");
+        prep.setString(1, "Vice Mayor");
+        prep.setString(2, "Evelyn Martinez");
+        prep.setString(3, "20");
         prep.setString(4, "Precinct");
-        prep.setString(5, "0016A");
-        prep.setString(6, "Acad");
-        prep.setString(7, "Aurora");
-        prep.setString(8, "First District");
-        prep.setString(9, "Zamboanga Del Sur");
-        prep.setString(10, "IX");
+        prep.setString(5, "0026B");
+        prep.setString(6, "Cabia-an");
+        prep.setString(7, "Candoni");
+        prep.setString(8, "Sixth District");
+        prep.setString(9, "Negros Occidental");
+        prep.setString(10, "XVIII");
         prep.setString(11, ip.toString());
         prep.setString(12, sb.toString());
-        prep.setString(13, "26.7693121300002");
-        prep.setString(14, "11.8351232199939");
+        prep.setString(13, "76.7693121300002");
+        prep.setString(14, "69.8351232199939");
         prep.setString(15, myDateString);
         prep.addBatch();
 
